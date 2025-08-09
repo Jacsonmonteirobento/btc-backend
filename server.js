@@ -49,7 +49,7 @@ app.post('/api/withdraw', async (req, res) => {
 
     res.json({ success: true, txid: response.data.result });
   } catch (err) {
-    console.error(err);
+    console.error('Erro ao processar saque:', err);
     res.status(500).json({ error: 'Erro ao processar saque', details: err.message });
   }
 });
